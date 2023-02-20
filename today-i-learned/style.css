@@ -7,6 +7,7 @@
 body {
   background-color: #292524;
   color: #fafaf9;
+  font-family: "Sono", sans-serif;
   padding: 40px;
 }
 
@@ -42,11 +43,15 @@ h1 {
 .fact {
   font-size: 20px;
   line-height: 1.4;
-  font-family: "Sono", sans-serif;
-  color: #fafaf9;
   background-color: #44403c;
   margin-bottom: 16px;
   padding: 16px 24px;
+  letter-spacing: -1px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 24px;
 }
 
 .tag {
@@ -56,6 +61,10 @@ h1 {
   padding-top: 3px;
   padding-left: 10px;
   padding-right: 10px;
+}
+
+.vote-buttons {
+  margin-left: auto;
 }
 
 ul {
