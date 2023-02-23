@@ -50,7 +50,27 @@ const factsList = document.querySelector(".fact-list");
 
 // Create DOM elements: Render facts in list
 factsList.innerHTML = "";
-createFactsList(initialFacts);
+//createFactsList(initialFacts);
+
+// Load data from
+
+loadFacts();
+
+async function loadFacts() {
+  const res = await fetch(
+    "https://mhtmfukjnrmqcyuiands.supabase.co/rest/v1/facts",
+    {
+      headers: {
+        apikey:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1odG1mdWtqbnJtcWN5dWlhbmRzIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzY5Nzc0ODgsImV4cCI6MTk5MjU1MzQ4OH0.rYg8H4JSxzepxhKZtm3ulbER8n2QuhadKnn0k718rt4",
+        authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1odG1mdWtqbnJtcWN5dWlhbmRzIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzY5Nzc0ODgsImV4cCI6MTk5MjU1MzQ4OH0.rYg8H4JSxzepxhKZtm3ulbER8n2QuhadKnn0k718rt4",
+      },
+    }
+  );
+  const data = await res.json();
+  createFactsList(data);
+}
 
 function createFactsList(dataArray) {
   // factsList.insertAdjacentHTML("afterbegin", "<li>Marvin</li>");
@@ -72,10 +92,6 @@ function createFactsList(dataArray) {
   const html = htmlArr.join("");
   factsList.insertAdjacentHTML("afterbegin", html);
 }
-
-//console.log(htmlArr);
-const html = htmlArr.join("");
-factsList.insertAdjacentHTML("afterbegin", html);
 
 // Toggle form visibility
 btn.addEventListener("click", function () {
