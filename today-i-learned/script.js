@@ -1,6 +1,8 @@
-console.log("Hello World!");
 const btn = document.querySelector(".btn-open");
 const form = document.querySelector(".fact-form");
+const factsList = document.querySelector(".fact-list");
+
+factsList.innerHTML = "";
 
 btn.addEventListener("click", function () {
   if (form.classList.contains("hidden")) {
@@ -112,6 +114,7 @@ console.log(category);
 console.log(factObj.createSummary());
 */
 
+/*
 const fact = ["Lisbon is the capital of Portugal", 2015, true];
 console.log(fact);
 console.log(fact[2]);
@@ -194,3 +197,4 @@ function calcFactAge(year) {
 const factAges = initialFacts.map((el) => calcFactAge(el.createdIn));
 console.log(factAges);
 console.log(factAges.join("-"));
+*/
